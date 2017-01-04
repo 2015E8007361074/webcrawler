@@ -11,6 +11,7 @@ function: a web crawler for PaiMai info
 from urllib.request import urlopen
 from urllib.error import HTTPError, URLError
 from bs4 import BeautifulSoup
+import re
 # Retrieve HTML string from the URL
 
 
@@ -105,6 +106,7 @@ def get_remind(url):
         remindlist = bsObj.findAll("span", {"class": "pm-reminder i-b"})
         # print (remindlist)
         remind = remindlist[0].get_text()
+        remind = "".join(re.findall("[0-9]+", remind)) # 此处用正则表达式获取信息中的数字
     except AttributeError as e:
         return None
     return remind
@@ -118,15 +120,16 @@ def get_surround(url):
     try:
         bsObj = BeautifulSoup(html.read())
         surroundlist = bsObj.findAll("em", {"id": "J_Looker"})
-        print (surroundlist)
+        # print (surroundlist)
         surround = surroundlist[0].get_text()
     except AttributeError as e:
         return None
     return surround
 
 # title = get_title("http://www.pythonscraping.com/exercises/exercise1.html")
-url = "https://sf.taobao.com/sf_item/537674355828.htm?spm=a213w.7398552.paiList.3.e6cNNe"
+# url = "https://sf.taobao.com/sf_item/537674355828.htm?spm=a213w.7398552.paiList.3.e6cNNe"
 # url = "https://sf.taobao.com/sf_item/537976732316.htm?spm=a213w.7398552.paiList.1.e6cNNe"
+url = "https://sf.taobao.com/sf_item/525351764416.htm?spm=a213w.7398552.paiList.1.3gRZ06"
 title = get_title(url)
 time = get_time(url)
 state = get_state(url)
