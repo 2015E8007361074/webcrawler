@@ -2,7 +2,7 @@
 """
 create on Jan 5,2017 By Wenyan Yu
 
-该程序是前面程序的重构代码，目的在于重构爬虫以爬去拍卖网上的拍卖商品详细信息：
+该程序是前面程序的重构代码，目的在于重构爬虫以爬取拍卖网上的拍卖商品详细信息：
 
 根据那个不规范的需求文档，本程序需要实现以下功能：
 1.保存商品详细页面的原始HTML代码
@@ -26,7 +26,7 @@ create on Jan 5,2017 By Wenyan Yu
 
 最后需要生成三个部分的信息：
 1.所有详细页面的链接，保存为links.csv文档，格式为url,标题
-2.所有采集到的拍买商品详细信息，保存为goods_info.csv文档，格式为：
+2.所有采集到的拍买商品详细信息，保存为page_info.csv文档，格式为：
 标题，结束时间，拍卖状态，成交价格，报名人数，提醒人数，围观次数，起拍价，加价幅度，保证金，佣金，延时周期，保留价，送拍机构，特色服务
 """
 from urllib.request import urlopen
@@ -44,7 +44,7 @@ class Crawler(object):
         self.calendar_list = calendar_list
         self.run_crawler()
         # self.url_for_per_day = "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"
-        # 上面是016年1月1日拍卖商品的列表页面
+        # 上面是2016年1月1日拍卖商品的列表页面
         # self.url = "https://sf.taobao.com/sf_item/525351764416.htm?spm=a213w.7398552.paiList.1.YEOjaL" # 拍卖结束，流拍
         # self.url = "https://sf.taobao.com/sf_item/541714260036.htm?spm=a213w.7398552.paiList.5.3YWi2H" # 拍卖结束，已成交
         # self.url = "https://sf.taobao.com/sf_item/541629168048.htm?spm=a213w.7398552.paiList.1.3YWi2H" # 正在进行的拍卖
