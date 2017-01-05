@@ -47,8 +47,8 @@
       <file leaf-file-name="refactor_crawler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="252" column="14" lean-forward="false" selection-start-line="252" selection-start-column="14" selection-end-line="252" selection-end-column="14" />
+            <state relative-caret-position="192">
+              <caret line="246" column="26" lean-forward="false" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="26" />
               <folding>
                 <element signature="e#532#566#0" expanded="true" />
                 <element signature="e#1632#5129#0" expanded="false" />
@@ -58,13 +58,24 @@
                 <element signature="e#14536#14633#1" expanded="false" />
                 <element signature="e#15011#15620#0" expanded="false" />
                 <element signature="e#15688#16127#0" expanded="false" />
+                <element signature="e#16164#17054#0" expanded="false" />
                 <element signature="e#16769#16933#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="links.csv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="links.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/links.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -77,7 +88,7 @@
       <file leaf-file-name="page_info.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/page_info.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-171">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
@@ -106,6 +117,7 @@
         <option value="$PROJECT_DIR$/data/page_info_per_day.csv" />
         <option value="$PROJECT_DIR$/data/links.csv" />
         <option value="$PROJECT_DIR$/cjj/refactor_crawler.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -560,6 +572,7 @@
             <element signature="e#14536#14633#1" expanded="false" />
             <element signature="e#15011#15620#0" expanded="false" />
             <element signature="e#15688#16127#0" expanded="false" />
+            <element signature="e#16164#17054#0" expanded="false" />
             <element signature="e#16769#16933#0" expanded="false" />
           </folding>
         </state>
@@ -586,6 +599,7 @@
             <element signature="e#14536#14633#1" expanded="false" />
             <element signature="e#15011#15620#0" expanded="false" />
             <element signature="e#15688#16127#0" expanded="false" />
+            <element signature="e#16164#17054#0" expanded="false" />
             <element signature="e#16769#16933#0" expanded="false" />
           </folding>
         </state>
@@ -670,8 +684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="252" column="14" lean-forward="false" selection-start-line="252" selection-start-column="14" selection-end-line="252" selection-end-column="14" />
+        <state relative-caret-position="192">
+          <caret line="246" column="26" lean-forward="false" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="26" />
           <folding>
             <element signature="e#532#566#0" expanded="true" />
             <element signature="e#1632#5129#0" expanded="false" />
@@ -681,16 +695,9 @@
             <element signature="e#14536#14633#1" expanded="false" />
             <element signature="e#15011#15620#0" expanded="false" />
             <element signature="e#15688#16127#0" expanded="false" />
+            <element signature="e#16164#17054#0" expanded="false" />
             <element signature="e#16769#16933#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/page_info.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -698,6 +705,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/page_info.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-171">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
