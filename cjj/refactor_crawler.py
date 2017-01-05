@@ -231,7 +231,7 @@ class Crawler(object):
 
     def store_page_info_to_csv(self, res_list, des_path):
         """
-        给定某一天的拍卖商品列表页面，获取该天所有的拍卖商品详细信息并，存储到page_info_per_day.csv文件中
+        将拍卖商品详细信息列表中的数据存储到page_info_per_day.csv文件中
         :return:None
         """
         csvFile = open(des_path, 'w+', encoding='utf-8')
