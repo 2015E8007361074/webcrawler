@@ -257,7 +257,7 @@ class Crawler(object):
         self.store_links_to_file(links_list, "../data/links.csv")
 
         # 获取每一件拍卖商品详细页面的URL,并抽取页面中的拍卖商品的详细信息，添加到page_info_list列表中
-        page_info_list = []
+        page_info_list = [["标题", "结束时间", "拍卖状态", "成交价格", "报名人数", "提醒人数", "围观次数", "起拍价", "加价幅度", "保证金", "佣金", "延时周期", "保留价", "送拍机构", "特色服务"]]
         for link in links_list:
             page_info = self.get_page_info(link)
             # print(page_info)
