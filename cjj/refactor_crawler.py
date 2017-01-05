@@ -42,16 +42,16 @@ class Crawler(object):
     """爬虫类，用于爬去拍卖网站上的商品信息"""
     def __init__(self, calendar_list):
         self.calendar_list = calendar_list
-        self.url_for_per_day = \
-            "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"
+        self.run_crawler()
+        # self.url_for_per_day = "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"
         # 上面是016年1月1日拍卖商品的列表页面
         # self.url = "https://sf.taobao.com/sf_item/525351764416.htm?spm=a213w.7398552.paiList.1.YEOjaL" # 拍卖结束，流拍
-        self.url = "https://sf.taobao.com/sf_item/541714260036.htm?spm=a213w.7398552.paiList.5.3YWi2H" # 拍卖结束，已成交
+        # self.url = "https://sf.taobao.com/sf_item/541714260036.htm?spm=a213w.7398552.paiList.5.3YWi2H" # 拍卖结束，已成交
         # self.url = "https://sf.taobao.com/sf_item/541629168048.htm?spm=a213w.7398552.paiList.1.3YWi2H" # 正在进行的拍卖
         # self.url = "https://sf.taobao.com/sf_item/543245084757.htm?spm=a213w.7398552.paiList.4.BmB61J" # 被中止的拍卖
         # self.url = "https://sf.taobao.com/sf_item/543239404828.htm?spm=a213w.7398552.paiList.12.BmB61J" # 被撤回的拍卖
 
-    def get_page_info(self,url):
+    def get_page_info(self, url):
         """
         抓取商品详细信息，一共需抓取15项：
         标题，结束时间，拍卖状态，成交价格，报名人数，提醒人数，围观次数，起拍价，加价幅度，保证金，佣金，延时周期，保留价，送拍机构，特色服务
@@ -109,7 +109,7 @@ class Crawler(object):
             print("9.加价幅度：", increase_range)
             page_info.append(increase_range)
 
-            guarantee = bsObj.find("tbody",{"id":"J_HoverShow"}).findAll("span",{"class":"J_Price"})[3].get_text().strip()
+            guarantee = bsObj.find("tbody",{"id": "J_HoverShow"}).findAll("span",{"class":"J_Price"})[3].get_text().strip()
             print("10.保证金：", guarantee)
             page_info.append(guarantee)
 
@@ -137,7 +137,7 @@ class Crawler(object):
             #    print(child)
             # print(bsObj.find("tbody",{"id":"J_HoverShow"}).findAll("span",{"class":"J_Price"}))
 
-        except AttributeError as e:
+        except (AttributeError, IndexError) as e:
             return None
         return page_info
 
@@ -147,7 +147,6 @@ class Crawler(object):
             html = urlopen(pre_url)
         except (HTTPError, URLError) as e:
             return None
-
         try:
             bsObj = BeautifulSoup(html)
             for link in bsObj.findAll("span", {"class": "next unavailable"}):
@@ -170,7 +169,6 @@ class Crawler(object):
             html = urlopen(page_url)
         except (HTTPError, URLError) as e:
             return None
-
         try:
             bsObj = BeautifulSoup(html)
             for list_data in bsObj.findAll("script", {"id": "sf-item-list-data"}):
@@ -184,7 +182,7 @@ class Crawler(object):
                 for item in links_json["data"]:
                     print("https:"+item["itemUrl"])
                     links_per_page.append("https:"+item["itemUrl"])
-        except AttributeError as e:
+        except (AttributeError, TypeError) as e:
             return None
         return links_per_page
 
@@ -196,11 +194,11 @@ class Crawler(object):
         """
         url = day_url
         links_per_day = []
-        links_per_day.extend(self.get_links_per_page(url))
+        if self.get_links_per_page(url) is None:
+            print("网络连接失败，请检查网络连接是否正确！")
         while(self.get_next_page(url)):
-            url = self.get_next_page(url)
             links_per_day.extend(self.get_links_per_page(url))
-
+            url = self.get_next_page(url)
         return links_per_day
 
     def store_links_to_file(self, res_list, des_path):
@@ -212,7 +210,7 @@ class Crawler(object):
         """
         # print(os.getcwd())
 
-        print(res_list)
+        # print(res_list)
         """
         file_in = open(des_path, 'w+')
 
@@ -231,28 +229,68 @@ class Crawler(object):
         finally:
             file.close()
 
-    def store_page_info_to_csv(self, res_url, des_path):
+    def store_page_info_to_csv(self, res_list, des_path):
         """
         给定某一天的拍卖商品列表页面，获取该天所有的拍卖商品详细信息并，存储到page_info_per_day.csv文件中
         :return:None
         """
-        csvFile = open(des_path, 'w+')
+        csvFile = open(des_path, 'w+', encoding='utf-8')
         try:
             writer = csv.writer(csvFile)
-            res_list = self.get_links_per_page(res_url)
             for i in res_list:
-                page_info = self.get_page_info(i)
-                print(page_info)
-                writer.writerow(page_info)
+                writer.writerow(i)
+        except TypeError as e:
+            print("The res_list is None!Please ensure the network is connected!")
         finally:
             csvFile.close()
 
+    def run_crawler(self):
+        """根据需求开始爬取符合要求的数据，并将数据存储到csv文件中"""
+        # print(self.calendar_list)
+        links_list = [] # 存储指定日期内所有的拍卖商品详细页面的链接
+        # 首先获取每一天的拍卖商品列表的首页面URL
+        for link_per_day in self.calendar_list:
+            # print(link_per_day)
+            # 获取当天所有的拍卖商品详细页面的URL，并添加到link_list列表中
+            links_list.extend(self.get_links_per_day(link_per_day))
+        # 将制定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中
+        self.store_links_to_file(links_list, "../data/links.csv")
+
+        # 获取每一件拍卖商品详细页面的URL,并抽取页面中的拍卖商品的详细信息，添加到page_info_list列表中
+        page_info_list = []
+        for link in links_list:
+            page_info = self.get_page_info(link)
+            # print(page_info)
+            if page_info is not None:
+                page_info_list.append(page_info)
+
+        # 将page_info_list拍卖商品详细信息存储到page_info.csv文件中
+        self.store_page_info_to_csv(page_info_list, "../data/page_info.csv")
 
 
 
 if __name__ == "__main__":
-    my_calendar_list = ["https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"]
+    # my_calendar_list 存储的是从2016年1月1日开始，每天拍卖商品列表的首页面
+    """
+        获取日历中每天的拍卖商品列表首页面
+
+        从2016年1月1日开始到2016年12月31日截止，一共一年的时间：
+        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000 2016.01.01
+        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451664000000 2016.01.02
+        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451750400000 2016.01.03
+        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451836800000 2016.01.04
+        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451923200000 2016.01.05
+        .
+        .
+        .
+        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1483113600000 2016.12.31
+    """
+    my_calendar_list = [
+        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"
+                       ]
+    # 开始实例化爬虫类，并传入需要采集拍卖商品列表的日期链接，运行爬虫采集数据，每一天对应一个URL
     my_crawler = Crawler(my_calendar_list)
+
     # print(my_crawler.get_page_info())
     # print(my_crawler.get_next_page("https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"))
     # print(my_crawler.get_links_per_page("https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"))
@@ -264,7 +302,8 @@ if __name__ == "__main__":
         my_crawler.get_links_per_day("https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"),
             "../data/links_per_day.csv")
     """
+    """
     my_crawler.store_page_info_to_csv(
         "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000",
             "../data/page_info_per_day.csv")
-
+    """

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/cjj/page_info.csv" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/data/page_info_per_day.csv" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
