@@ -6,7 +6,7 @@ function: a web crawler for PaiMai info
 只考虑历史拍卖记录，已成功拍卖的以及流拍的商品，不考虑正在拍卖的商品。
 
 需要抓取商品信息如下：
-标题，结束时间，是否成交，成交价格，报名人数，提醒人数，围观次数，起拍价，评估价，保证金，加价幅度，竞价周期，延时周期，保留价
+标题，结束时间，拍卖状态，成交价格，报名人数，提醒人数，围观次数，起拍价，加价幅度，保证金，佣金，延时周期，保留价，送拍机构，特色服务
 """
 from urllib.request import urlopen
 from urllib.error import HTTPError, URLError
@@ -35,6 +35,7 @@ def get_time(url):
         html=urlopen(url)
     except (HTTPError, URLError) as e:
         return None
+    time = None
     try:
         bsObj = BeautifulSoup(html.read())
         timelist = bsObj.findAll("span", {"class": "countdown J_TimeLeft"})
@@ -130,29 +131,26 @@ def get_surround(url):
 # title = get_title("http://www.pythonscraping.com/exercises/exercise1.html")
 # url = "https://sf.taobao.com/sf_item/537674355828.htm?spm=a213w.7398552.paiList.3.e6cNNe"
 # url = "https://sf.taobao.com/sf_item/537976732316.htm?spm=a213w.7398552.paiList.1.e6cNNe"
-url = "https://sf.taobao.com/sf_item/525351764416.htm?spm=a213w.7398552.paiList.1.3gRZ06"
+# url = "https://sf.taobao.com/sf_item/525351764416.htm?spm=a213w.7398552.paiList.1.3gRZ06"
+url = "https://sf.taobao.com/sf_item/525612660941.htm?spm=a213w.7398552.paiList.1.WjcE6s"
 title = get_title(url)
-time = get_time(url)
-state = get_state(url)
-price = get_price(url)
-apply = get_apply(url)
-remind = get_remind(url)
-surround = get_surround(url)
 
 if title == None:
     print("Title could not be found")
+elif get_time(url) == None:
+    print("该拍卖商品已撤回")
 else:
     print("标题:", title)
-    print("结束时间:", time)
-    print("状态:", state)
-    print("价格:", price.strip())
-    print("报名人数:", apply)
-    print("提醒人数:", remind)
-    print("围观人数:", surround)
+    print("结束时间:", get_time(url))
+    print("状态:", get_state(url))
+    print("价格:", get_price(url).strip())
+    print("报名人数:", get_apply(url))
+    print("提醒人数:", get_remind(url))
+    print("围观人数:", get_surround(url))
     page_info = open("page_info.csv", "w+")
     try:
         writer = csv.writer(page_info)
-        writer.writerow((title.strip(), time, state, price.strip(), apply, remind, surround))
+        writer.writerow((title.strip(), get_time(url), get_state(url), get_price(url).strip(url), get_apply(url), get_remind(url), get_surround(url)))
     finally:
         page_info.close()
 
