@@ -267,8 +267,6 @@ class Crawler(object):
         # 将page_info_list拍卖商品详细信息存储到page_info.csv文件中
         self.store_page_info_to_csv(page_info_list, "../data/page_info.csv")
 
-
-
 if __name__ == "__main__":
     # my_calendar_list 存储的是从2016年1月1日开始，每天拍卖商品列表的首页面
     """
