@@ -284,7 +284,11 @@ if __name__ == "__main__":
         https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1483113600000 2016.12.31
     """
     my_calendar_list = [
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"
+        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000",
+        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451664000000",
+        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451750400000",
+        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451836800000",
+        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451923200000"
                        ]
     # 开始实例化爬虫类，并传入需要采集拍卖商品列表的日期链接，运行爬虫采集数据，每一天对应一个URL
     my_crawler = Crawler(my_calendar_list)
