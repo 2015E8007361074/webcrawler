@@ -17,3 +17,27 @@ https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selec
 
 
 """
+from urllib.request import urlopen
+from urllib.error import HTTPError, URLError
+from bs4 import BeautifulSoup
+import re
+import csv
+
+
+def get_calendar(url):
+    """获取日历中的拍卖商品列表首页面URL"""
+    links_list = []
+    try:
+        html = urlopen(url)
+    except (HTTPError, URLError) as e:
+        return None
+    try:
+        bsObj = BeautifulSoup(html.read())
+        print(bsObj)
+
+    except AttributeError as e:
+        return None
+    return links_list
+
+url = "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"
+print(get_calendar(url))
