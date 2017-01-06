@@ -7,7 +7,7 @@ pages = set()
 
 def get_links(page_url):
     global pages
-    html = urlopen("http://mryu.top/")
+    html = urlopen("http://www.taobao.com/")
     bs_obj = BeautifulSoup(html)
     for link in bs_obj.findAll("a"):
         if 'href' in link.attrs:

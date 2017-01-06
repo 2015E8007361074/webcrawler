@@ -36,12 +36,20 @@ import re
 import csv
 import json
 import os
+import datetime
+import time
 
 
 class Crawler(object):
     """爬虫类，用于爬去拍卖网站上的商品信息"""
-    def __init__(self, calendar_list):
-        self.calendar_list = calendar_list
+    def __init__(self, start_time_epoch, end_time_epoch ):
+
+        self.start = start_time_epoch # 开始采集的时间
+        self.end = end_time_epoch    # 结束采集的时间
+        # 获取给定时间段拍卖商品的日历链接
+        self.calendar_list = self.get_calendar_links(self.start, self.end)
+        # 将获取到拍卖商品日历链接存储到calendar_links.csv当中
+        self.store_links_to_file(self.calendar_list, "../data/calendar_links.csv")
         self.run_crawler()
         # self.url_for_per_day = "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"
         # 上面是2016年1月1日拍卖商品的列表页面
@@ -246,6 +254,8 @@ class Crawler(object):
 
     def run_crawler(self):
         """根据需求开始爬取符合要求的数据，并将数据存储到csv文件中"""
+
+
         # print(self.calendar_list)
         links_list = [] # 存储指定日期内所有的拍卖商品详细页面的链接
         # 首先获取每一天的拍卖商品列表的首页面URL
@@ -267,37 +277,41 @@ class Crawler(object):
         # 将page_info_list拍卖商品详细信息存储到page_info.csv文件中
         self.store_page_info_to_csv(page_info_list, "../data/page_info.csv")
 
+    def get_calendar_links(self, start_time_epoch, end_time_epoch):
+        """获取指定时间段的拍卖商品列表的日历链接"""
+        calendar_links_list = []
+        print("开始时间戳：", start_time_epoch)
+        print("结束时间戳：", end_time_epoch)
+
+        if start_time_epoch > end_time_epoch:
+            print("您输入的时间区间有有误，请重新输入！")
+            return None
+
+        while (start_time_epoch <= end_time_epoch):
+            current_time = start_time_epoch
+            link = "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=" + str(
+                current_time) + "000"
+            print(link)
+            calendar_links_list.append(link)
+            start_time_epoch += 86400
+        return calendar_links_list
+
+
 if __name__ == "__main__":
-    # my_calendar_list 存储的是从2016年1月1日开始，每天拍卖商品列表的首页面
-    """
-        获取日历中每天的拍卖商品列表首页面
+    # 自动采集任意时间段内的功能已添加完毕
 
-        从2016年1月1日开始到2016年12月31日截止，一共一年的时间：
-        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000 2016.01.01
-        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451664000000 2016.01.02
-        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451750400000 2016.01.03
-        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451836800000 2016.01.04
-        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451923200000 2016.01.05
-        .
-        .
-        .
-        https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1483113600000 2016.12.31
-    """
-    my_calendar_list = [
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000",
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451664000000",
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451750400000",
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451836800000",
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451923200000",
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1452009600000",
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1452096000000",
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000",
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1452268800000",
-        "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1452355200000"
+    # 开始采集的时间
+    # 只需要填写年月日，如2016年1月1日->(2016,1,1,0,0,0)
+    start_time = datetime.datetime(2016,1,1,0,0,0)
+    # 结束采集的时间，要求同上
+    end_time = datetime.datetime(2016,1,3,0,0,0)
 
-                       ]
-    # 开始实例化爬虫类，并传入需要采集拍卖商品列表的日期链接，运行爬虫采集数据，每一天对应一个URL
-    my_crawler = Crawler(my_calendar_list)
+    # 将时间格式转换为Unix时间戳
+    start_time_epoch = round(time.mktime(start_time.timetuple()))
+    end_time_epoch = round(time.mktime(end_time.timetuple()))
+    # 开始实例化爬虫类
+    # 传入开始采集和结束采集时间区间
+    my_crawler = Crawler(start_time_epoch, end_time_epoch)
 
     # print(my_crawler.get_page_info())
     # print(my_crawler.get_next_page("https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"))
