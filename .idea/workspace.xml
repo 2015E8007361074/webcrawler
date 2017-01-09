@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d1ae23a-676f-41f9-8168-eef1e62a2b8d" name="Default" comment="" />
+    <list default="true" id="2d1ae23a-676f-41f9-8168-eef1e62a2b8d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webcrawler.iml" afterPath="$PROJECT_DIR$/.idea/webcrawler.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cjj/refactor_crawler.py" afterPath="$PROJECT_DIR$/cjj/refactor_crawler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/calendar_links.csv" afterPath="$PROJECT_DIR$/data/calendar_links.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/links.csv" afterPath="$PROJECT_DIR$/data/links.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/page_info.csv" afterPath="$PROJECT_DIR$/data/page_info.csv" />
+    </list>
     <ignored path="webcrawler.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -15,8 +23,8 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/webcrawler$get_page_info.coverage" NAME="get_page_info Coverage Results" MODIFIED="1483592010305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cjj" />
     <SUITE FILE_PATH="coverage/webcrawler$test_date.coverage" NAME="test_date Coverage Results" MODIFIED="1483707549662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cjj" />
+    <SUITE FILE_PATH="coverage/webcrawler$refactor_crawler.coverage" NAME="refactor_crawler Coverage Results" MODIFIED="1483927127151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cjj" />
     <SUITE FILE_PATH="coverage/webcrawler$get_links_per_day.coverage" NAME="get_links_per_day Coverage Results" MODIFIED="1483585069620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cjj" />
-    <SUITE FILE_PATH="coverage/webcrawler$refactor_crawler.coverage" NAME="refactor_crawler Coverage Results" MODIFIED="1483701465313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cjj" />
     <SUITE FILE_PATH="coverage/webcrawler$get_links.coverage" NAME="get_links Coverage Results" MODIFIED="1483672755842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mryu" />
     <SUITE FILE_PATH="coverage/webcrawler$get_calendar.coverage" NAME="get_calendar Coverage Results" MODIFIED="1483699330723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cjj" />
   </component>
@@ -37,31 +45,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="crawler_for_treatures.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cjj/crawler_for_treatures.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="refactor_crawler.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="refactor_crawler.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="171">
+              <caret line="313" column="40" selection-start-line="313" selection-start-column="40" selection-end-line="313" selection-end-column="40" />
               <folding>
                 <element signature="e#531#565#0" expanded="true" />
-                <element signature="e#1964#5461#0" expanded="false" />
-                <element signature="e#5509#6070#0" expanded="false" />
-                <element signature="e#6124#14816#0" expanded="false" />
-                <element signature="e#14868#15278#0" expanded="false" />
-                <element signature="e#15343#15952#0" expanded="false" />
-                <element signature="e#16020#16442#0" expanded="false" />
-                <element signature="e#16479#17484#0" expanded="false" />
-                <element signature="e#17562#18205#0" expanded="false" />
+                <element signature="e#834#1920#0" expanded="false" />
+                <element signature="e#1964#5505#0" expanded="false" />
+                <element signature="e#5553#6129#0" expanded="false" />
+                <element signature="e#6183#14892#0" expanded="false" />
+                <element signature="e#14944#15354#0" expanded="false" />
+                <element signature="e#15419#16028#0" expanded="false" />
+                <element signature="e#16096#16518#0" expanded="false" />
+                <element signature="e#16555#17794#0" expanded="false" />
+                <element signature="e#17872#18551#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -92,9 +91,9 @@
         <option value="$PROJECT_DIR$/mryu/get_links.py" />
         <option value="$PROJECT_DIR$/cjj/get_calendar.py" />
         <option value="$PROJECT_DIR$/data/calendar_links.csv" />
-        <option value="$PROJECT_DIR$/cjj/refactor_crawler.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/cjj/crawler_for_treatures.py" />
+        <option value="$PROJECT_DIR$/cjj/refactor_crawler.py" />
       </list>
     </option>
   </component>
@@ -105,10 +104,20 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1535" />
+    <option name="height" value="876" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -125,8 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -134,8 +141,28 @@
               <option name="myItemId" value="webcrawler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mryu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -169,14 +196,17 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.test_date">
+  <component name="RunManager" selected="Python.refactor_crawler">
     <configuration default="false" name="get_page_info" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -287,12 +317,6 @@
       <option name="OPTIONS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -365,7 +389,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
+      <command value="run-script" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
@@ -490,8 +514,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.test_date" />
-        <item index="1" class="java.lang.String" itemvalue="Python.refactor_crawler" />
+        <item index="0" class="java.lang.String" itemvalue="Python.refactor_crawler" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_date" />
         <item index="2" class="java.lang.String" itemvalue="Python.get_calendar" />
         <item index="3" class="java.lang.String" itemvalue="Python.get_links" />
         <item index="4" class="java.lang.String" itemvalue="Python.get_page_info" />
@@ -524,16 +548,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="65" y="24" width="1535" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14978679" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15157612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293092" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26031747" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2596401" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -588,10 +612,29 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#531#565#0" expanded="true" />
+            <element signature="e#834#1920#0" expanded="false" />
+            <element signature="e#1964#5505#0" expanded="false" />
+            <element signature="e#5553#6129#0" expanded="false" />
+            <element signature="e#6183#14892#0" expanded="false" />
+            <element signature="e#14944#15354#0" expanded="false" />
+            <element signature="e#15419#16028#0" expanded="false" />
+            <element signature="e#16096#16518#0" expanded="false" />
+            <element signature="e#16555#17794#0" expanded="false" />
+            <element signature="e#17872#18551#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mryu/get_links.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
@@ -601,43 +644,39 @@
     <entry file="file://$PROJECT_DIR$/cjj/get_calendar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1957">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_links_per_day.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
-          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
-          <folding />
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_page_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="e#216#250#0" expanded="true" />
-          </folding>
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6080">
-          <caret line="328" column="50" lean-forward="false" selection-start-line="328" selection-start-column="50" selection-end-line="328" selection-end-column="50" />
+          <caret line="328" column="50" selection-start-line="328" selection-start-column="50" selection-end-line="328" selection-end-column="50" />
           <folding>
             <element signature="e#531#565#0" expanded="true" />
-            <element signature="e#1964#5461#0" expanded="false" />
-            <element signature="e#5509#6070#0" expanded="false" />
-            <element signature="e#6124#14816#0" expanded="false" />
-            <element signature="e#14868#15278#0" expanded="false" />
-            <element signature="e#15343#15952#0" expanded="false" />
-            <element signature="e#16020#16442#0" expanded="false" />
-            <element signature="e#16479#17484#0" expanded="false" />
-            <element signature="e#17562#18205#0" expanded="false" />
+            <element signature="e#834#1920#0" expanded="false" />
+            <element signature="e#1964#5505#0" expanded="false" />
+            <element signature="e#5553#6129#0" expanded="false" />
+            <element signature="e#6183#14892#0" expanded="false" />
+            <element signature="e#14944#15354#0" expanded="false" />
+            <element signature="e#15419#16028#0" expanded="false" />
+            <element signature="e#16096#16518#0" expanded="false" />
+            <element signature="e#16555#17794#0" expanded="false" />
+            <element signature="e#17872#18551#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -646,8 +685,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           </first_editor>
           <second_editor />
         </state>
@@ -656,7 +694,7 @@
     <entry file="file://$PROJECT_DIR$/mryu/get_links.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
@@ -666,43 +704,39 @@
     <entry file="file://$PROJECT_DIR$/cjj/get_calendar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-          <folding />
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_links_per_day.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
-          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
-          <folding />
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_page_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="e#216#250#0" expanded="true" />
-          </folding>
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5776">
-          <caret line="304" column="50" lean-forward="false" selection-start-line="304" selection-start-column="50" selection-end-line="304" selection-end-column="50" />
+          <caret line="304" column="50" selection-start-line="304" selection-start-column="50" selection-end-line="304" selection-end-column="50" />
           <folding>
             <element signature="e#531#565#0" expanded="true" />
-            <element signature="e#1964#5461#0" expanded="false" />
-            <element signature="e#5509#6070#0" expanded="false" />
-            <element signature="e#6124#14816#0" expanded="false" />
-            <element signature="e#14868#15278#0" expanded="false" />
-            <element signature="e#15343#15952#0" expanded="false" />
-            <element signature="e#16020#16442#0" expanded="false" />
-            <element signature="e#16479#17484#0" expanded="false" />
-            <element signature="e#17562#18205#0" expanded="false" />
+            <element signature="e#834#1920#0" expanded="false" />
+            <element signature="e#1964#5505#0" expanded="false" />
+            <element signature="e#5553#6129#0" expanded="false" />
+            <element signature="e#6183#14892#0" expanded="false" />
+            <element signature="e#14944#15354#0" expanded="false" />
+            <element signature="e#15419#16028#0" expanded="false" />
+            <element signature="e#16096#16518#0" expanded="false" />
+            <element signature="e#16555#17794#0" expanded="false" />
+            <element signature="e#17872#18551#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -710,23 +744,21 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_calendar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
-          <folding />
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mryu/get_links.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
@@ -736,42 +768,39 @@
     <entry file="file://$PROJECT_DIR$/cjj/test_date.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_links_per_day.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
-          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
-          <folding />
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_page_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="e#216#250#0" expanded="true" />
-          </folding>
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4275">
-          <caret line="291" column="110" lean-forward="false" selection-start-line="291" selection-start-column="110" selection-end-line="291" selection-end-column="110" />
+          <caret line="291" column="110" selection-start-line="291" selection-start-column="110" selection-end-line="291" selection-end-column="110" />
           <folding>
             <element signature="e#531#565#0" expanded="true" />
-            <element signature="e#1964#5461#0" expanded="false" />
-            <element signature="e#5509#6070#0" expanded="false" />
-            <element signature="e#6124#14816#0" expanded="false" />
-            <element signature="e#14868#15278#0" expanded="false" />
-            <element signature="e#15343#15952#0" expanded="false" />
-            <element signature="e#16020#16442#0" expanded="false" />
-            <element signature="e#16479#17484#0" expanded="false" />
-            <element signature="e#17562#18205#0" expanded="false" />
+            <element signature="e#834#1920#0" expanded="false" />
+            <element signature="e#1964#5505#0" expanded="false" />
+            <element signature="e#5553#6129#0" expanded="false" />
+            <element signature="e#6183#14892#0" expanded="false" />
+            <element signature="e#14944#15354#0" expanded="false" />
+            <element signature="e#15419#16028#0" expanded="false" />
+            <element signature="e#16096#16518#0" expanded="false" />
+            <element signature="e#16555#17794#0" expanded="false" />
+            <element signature="e#17872#18551#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -779,39 +808,39 @@
     <entry file="file://$PROJECT_DIR$/data/links.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64245">
-          <caret line="4283" column="46" lean-forward="false" selection-start-line="4283" selection-start-column="46" selection-end-line="4283" selection-end-column="46" />
+          <caret line="4283" column="46" selection-start-line="4283" selection-start-column="46" selection-end-line="4283" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/page_info.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61740">
-          <caret line="4116" column="0" lean-forward="false" selection-start-line="4116" selection-start-column="0" selection-end-line="4116" selection-end-column="0" />
+          <caret line="4116" column="0" selection-start-line="4116" selection-start-column="0" selection-end-line="4116" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_calendar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="e#531#565#0" expanded="true" />
-            <element signature="e#1964#5461#0" expanded="false" />
-            <element signature="e#5509#6070#0" expanded="false" />
-            <element signature="e#6124#14816#0" expanded="false" />
-            <element signature="e#14868#15278#0" expanded="false" />
-            <element signature="e#15343#15952#0" expanded="false" />
-            <element signature="e#16020#16442#0" expanded="false" />
-            <element signature="e#16479#17484#0" expanded="false" />
-            <element signature="e#17562#18205#0" expanded="false" />
+            <element signature="e#834#1920#0" expanded="false" />
+            <element signature="e#1964#5505#0" expanded="false" />
+            <element signature="e#5553#6129#0" expanded="false" />
+            <element signature="e#6183#14892#0" expanded="false" />
+            <element signature="e#14944#15354#0" expanded="false" />
+            <element signature="e#15419#16028#0" expanded="false" />
+            <element signature="e#16096#16518#0" expanded="false" />
+            <element signature="e#16555#17794#0" expanded="false" />
+            <element signature="e#17872#18551#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -820,25 +849,25 @@
     <entry file="file://$PROJECT_DIR$/cjj/get_calendar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5111">
-          <caret line="269" column="0" lean-forward="false" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+          <caret line="269" column="0" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
           <folding>
             <element signature="e#531#565#0" expanded="true" />
-            <element signature="e#1964#5461#0" expanded="false" />
-            <element signature="e#5509#6070#0" expanded="false" />
-            <element signature="e#6124#14816#0" expanded="false" />
-            <element signature="e#14868#15278#0" expanded="false" />
-            <element signature="e#15343#15952#0" expanded="false" />
-            <element signature="e#16020#16442#0" expanded="false" />
-            <element signature="e#16479#17484#0" expanded="false" />
-            <element signature="e#17562#18205#0" expanded="false" />
+            <element signature="e#834#1920#0" expanded="false" />
+            <element signature="e#1964#5505#0" expanded="false" />
+            <element signature="e#5553#6129#0" expanded="false" />
+            <element signature="e#6183#14892#0" expanded="false" />
+            <element signature="e#14944#15354#0" expanded="false" />
+            <element signature="e#15419#16028#0" expanded="false" />
+            <element signature="e#16096#16518#0" expanded="false" />
+            <element signature="e#16555#17794#0" expanded="false" />
+            <element signature="e#17872#18551#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -846,25 +875,25 @@
     <entry file="file://$PROJECT_DIR$/cjj/get_calendar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#531#565#0" expanded="true" />
-            <element signature="e#1964#5461#0" expanded="false" />
-            <element signature="e#5509#6070#0" expanded="false" />
-            <element signature="e#6124#14816#0" expanded="false" />
-            <element signature="e#14868#15278#0" expanded="false" />
-            <element signature="e#15343#15952#0" expanded="false" />
-            <element signature="e#16020#16442#0" expanded="false" />
-            <element signature="e#16479#17484#0" expanded="false" />
-            <element signature="e#17562#18205#0" expanded="false" />
+            <element signature="e#834#1920#0" expanded="false" />
+            <element signature="e#1964#5505#0" expanded="false" />
+            <element signature="e#5553#6129#0" expanded="false" />
+            <element signature="e#6183#14892#0" expanded="false" />
+            <element signature="e#14944#15354#0" expanded="false" />
+            <element signature="e#15419#16028#0" expanded="false" />
+            <element signature="e#16096#16518#0" expanded="false" />
+            <element signature="e#16555#17794#0" expanded="false" />
+            <element signature="e#17872#18551#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -873,7 +902,7 @@
     <entry file="file://$PROJECT_DIR$/webcrawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -881,7 +910,7 @@
     <entry file="file://$PROJECT_DIR$/lambda_re.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -889,7 +918,7 @@
     <entry file="file://$PROJECT_DIR$/links_per_day.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -901,64 +930,48 @@
     <entry file="file://$PROJECT_DIR$/cjj/get_links_per_day.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
-          <caret line="39" column="29" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mryu/get_links.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/page_info.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="891">
-          <caret line="391" column="0" lean-forward="false" selection-start-line="391" selection-start-column="0" selection-end-line="391" selection-end-column="0" />
+          <caret line="391" column="0" selection-start-line="391" selection-start-column="0" selection-end-line="391" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_page_info.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="e#216#250#0" expanded="true" />
-          </folding>
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/links.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
-          <caret line="444" column="46" lean-forward="false" selection-start-line="444" selection-start-column="46" selection-end-line="444" selection-end-column="46" />
+          <caret line="444" column="46" selection-start-line="444" selection-start-column="46" selection-end-line="444" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/calendar_links.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-205">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="-511">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           </first_editor>
           <second_editor />
         </state>
@@ -967,42 +980,58 @@
     <entry file="file://$PROJECT_DIR$/cjj/test_date.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding />
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/get_calendar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#531#565#0" expanded="true" />
-            <element signature="e#1964#5461#0" expanded="false" />
-            <element signature="e#5509#6070#0" expanded="false" />
-            <element signature="e#6124#14816#0" expanded="false" />
-            <element signature="e#14868#15278#0" expanded="false" />
-            <element signature="e#15343#15952#0" expanded="false" />
-            <element signature="e#16020#16442#0" expanded="false" />
-            <element signature="e#16479#17484#0" expanded="false" />
-            <element signature="e#17562#18205#0" expanded="false" />
-          </folding>
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/crawler_for_treatures.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python3/dist-packages/bs4/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mryu/get_links.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="313" column="40" selection-start-line="313" selection-start-column="40" selection-end-line="313" selection-end-column="40" />
+          <folding>
+            <element signature="e#531#565#0" expanded="true" />
+            <element signature="e#834#1920#0" expanded="false" />
+            <element signature="e#1964#5505#0" expanded="false" />
+            <element signature="e#5553#6129#0" expanded="false" />
+            <element signature="e#6183#14892#0" expanded="false" />
+            <element signature="e#14944#15354#0" expanded="false" />
+            <element signature="e#15419#16028#0" expanded="false" />
+            <element signature="e#16096#16518#0" expanded="false" />
+            <element signature="e#16555#17794#0" expanded="false" />
+            <element signature="e#17872#18551#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

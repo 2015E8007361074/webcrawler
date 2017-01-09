@@ -72,15 +72,15 @@ class Crawler(object):
             return None
 
         try:
-            bsObj = BeautifulSoup(html.read())
+            bsObj = BeautifulSoup(html.read(),"html.parser")
             # print(bsObj)
             # title = bsObj.find("h1").get_text().strip()
             title = "".join(bsObj.find("h1").get_text().split()) # 去除标题中的空格，换行符，制表符
-            print("1.标题：", title)
+            # print("1.标题：", title)
             page_info.append(title)
 
             time = bsObj.find("span", {"class": "countdown J_TimeLeft"}).get_text()
-            print("2.结束时间：", time)
+            # print("2.结束时间：", time)
             page_info.append(time)
 
             state = bsObj.find("span", {"class": "title"}).get_text()
@@ -90,55 +90,55 @@ class Crawler(object):
                 state = "流拍"
             # 此处只针对历史拍卖记录进行抓取，所以不考虑正在进行的拍卖
             # 而有价格状态记录的信息有两种已成交和流拍的，对于撤回和终止的拍卖商品自动舍弃
-            print("3.拍卖状态：", state)
+            # print("3.拍卖状态：", state)
             page_info.append(state)
 
             price = bsObj.find("span", {"class": "pm-current-price J_Price"}).get_text().strip()
-            print("4.拍卖价格：", price)
+            # print("4.拍卖价格：", price)
             page_info.append(price)
 
             apply = bsObj.find("em", {"class": "J_Applyer"}).get_text().strip()
-            print("5.报名人数：", apply)
+            # print("5.报名人数：", apply)
             page_info.append(apply)
 
             remind = bsObj.find("span", {"class": "pm-reminder i-b"}).find("em").get_text().strip()
-            print("6.提醒人数：", remind)
+            # print("6.提醒人数：", remind)
             page_info.append(remind)
 
             surround = bsObj.find("em", {"id": "J_Looker"}).get_text().strip()
-            print("7.围观次数：", surround)
+            # print("7.围观次数：", surround)
             page_info.append(surround)
 
             start_price = bsObj.find("tbody", {"id": "J_HoverShow"}).findAll("span",{"class":"J_Price"})[0].get_text().strip()
-            print("8.起拍价：", start_price)
+            # print("8.起拍价：", start_price)
             page_info.append(start_price)
 
             increase_range = bsObj.find("tbody",{"id":"J_HoverShow"}).findAll("span",{"class":"J_Price"})[1].get_text().strip()
-            print("9.加价幅度：", increase_range)
+            # print("9.加价幅度：", increase_range)
             page_info.append(increase_range)
 
             guarantee = bsObj.find("tbody",{"id": "J_HoverShow"}).findAll("span",{"class":"J_Price"})[3].get_text().strip()
-            print("10.保证金：", guarantee)
+            # print("10.保证金：", guarantee)
             page_info.append(guarantee)
 
             charges = "无"
-            print("11.佣金：", charges)
+            # print("11.佣金：", charges)
             page_info.append(charges)
 
             delay_period = bsObj.find("tbody", {"id": "J_HoverShow"}).find("td", {"class": "delay-td"}).findAll("span")[1].get_text().strip(": ")
-            print("12.延时周期：", delay_period)
+            # print("12.延时周期：", delay_period)
             page_info.append(delay_period)
 
             reserve_price = bsObj.find("tbody", {"id": "J_HoverShow"}).find("td", {"class": "reserve-td"}).findAll("span")[1].get_text().strip(": ")
-            print("13.保留价：", reserve_price)
+            # print("13.保留价：", reserve_price)
             page_info.append(reserve_price)
 
             insitution = "无"
-            print("14.送拍机构：", insitution)
+            # print("14.送拍机构：", insitution)
             page_info.append(insitution)
 
             special_service = "无"
-            print("15.特色服务：", special_service)
+            # print("15.特色服务：", special_service)
             page_info.append(special_service)
 
             # for child in bsObj.find("tbody", {"id": "J_HoverShow"}).children:
@@ -156,7 +156,7 @@ class Crawler(object):
         except (HTTPError, URLError) as e:
             return None
         try:
-            bsObj = BeautifulSoup(html)
+            bsObj = BeautifulSoup(html, "html.parser")
             for link in bsObj.findAll("span", {"class": "next unavailable"}):
                 if link is not None:
                     return None
@@ -178,7 +178,7 @@ class Crawler(object):
         except (HTTPError, URLError) as e:
             return None
         try:
-            bsObj = BeautifulSoup(html)
+            bsObj = BeautifulSoup(html, "html.parser")
             for list_data in bsObj.findAll("script", {"id": "sf-item-list-data"}):
                 links = list_data.get_text()
                 links_json = json.loads(links)
@@ -188,7 +188,7 @@ class Crawler(object):
                 {'data': [{'end': 1451718000000, 'timeToEnd': -31880535098, 'start': 1451631600000, 'viewerCount': 2105, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i4/TB1L6kKKVXXXXXzXpXX8GID8VXX', 'status': 'failure', 'delayCount': 0, 'title': '安龙县新安镇杨柳街1幢2单元6楼2号砖混房屋一套', 'initialPrice': 209851.7, 'applyCount': 1, 'xmppVersion': '2', 'id': 525351764416, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525351764416.htm', 'consultPrice': 209851.7, 'bidCount': 0, 'timeToStart': -31966935098, 'currentPrice': 209851.7}, {'end': 1451703192000, 'timeToEnd': -31895343098, 'start': 1451613600000, 'viewerCount': 2482, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i1/TB1ha2tLXXXXXcMXFXX5pGJFXXX', 'status': 'done', 'delayCount': 15, 'title': '建德市寿昌镇东昌北路90号住宅房产', 'initialPrice': 720000.0, 'applyCount': 3, 'xmppVersion': '34', 'id': 525352044663, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525352044663.htm', 'consultPrice': 1112000.0, 'bidCount': 28, 'timeToStart': -31984935098, 'currentPrice': 720000.0}, {'end': 1451702392000, 'timeToEnd': -31896143098, 'start': 1451613600000, 'viewerCount': 6416, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i4/TB1W7oXKVXXXXbwXFXXgNdv.pXX', 'status': 'done', 'delayCount': 11, 'title': '杭州市西湖区金海公寓3幢4单元601室房屋', 'initialPrice': 1115000.0, 'applyCount': 9, 'xmppVersion': '57', 'id': 525293273999, 'supportLoans': 1, 'itemUrl': '//sf.taobao.com/sf_item/525293273999.htm', 'consultPrice': 1370000.0, 'bidCount': 53, 'timeToStart': -31984935098, 'currentPrice': 1115000.0}, {'end': 1451702111000, 'timeToEnd': -31896424098, 'start': 1451613600000, 'viewerCount': 5321, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i2/TB1zKQIKVXXXXcQXpXXnTVc.VXX', 'status': 'done', 'delayCount': 9, 'title': '大亚湾西区石化大道中512号星河半岛花园3栋17层06号房产', 'initialPrice': 390440.0, 'applyCount': 5, 'xmppVersion': '38', 'id': 525309391444, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525309391444.htm', 'consultPrice': 460050.0, 'bidCount': 29, 'timeToStart': -31984935098, 'currentPrice': 390440.0}, {'end': 1451702031000, 'timeToEnd': -31896504098, 'start': 1451613600000, 'viewerCount': 4107, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i1/TB11kwlKVXXXXboXVXXwbG98VXX', 'status': 'done', 'delayCount': 9, 'title': '新安江街道环城北路?金地家园3幢1-502室住宅房地产', 'initialPrice': 1300000.0, 'applyCount': 6, 'xmppVersion': '43', 'id': 525333982706, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525333982706.htm', 'consultPrice': 1789474.0, 'bidCount': 39, 'timeToStart': -31984935098, 'currentPrice': 1300000.0}, {'end': 1451701657000, 'timeToEnd': -31896878098, 'start': 1451613600000, 'viewerCount': 3134, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i1/TB1WowlKVXXXXX3XFXX9Sjl9VXX', 'status': 'done', 'delayCount': 7, 'title': '泗阳县盛世嘉园15幢604室住宅房地产及装潢（含车库、阁楼）', 'initialPrice': 411720.0, 'applyCount': 5, 'xmppVersion': '32', 'id': 525321260310, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525321260310.htm', 'consultPrice': 450900.0, 'bidCount': 29, 'timeToStart': -31984935098, 'currentPrice': 411720.0}, {'end': 1451701487000, 'timeToEnd': -31897048098, 'start': 1451613600000, 'viewerCount': 4547, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i1/TB1.tnpLXXXXXcmXVXXemZm8XXX', 'status': 'done', 'delayCount': 6, 'title': '杭州市西湖区城北商贸园22幢1单元302室', 'initialPrice': 924880.0, 'applyCount': 2, 'xmppVersion': '32', 'id': 525307514043, 'supportLoans': 1, 'itemUrl': '//sf.taobao.com/sf_item/525307514043.htm', 'consultPrice': 1380000.0, 'bidCount': 24, 'timeToStart': -31984935098, 'currentPrice': 924880.0}, {'end': 1451701097000, 'timeToEnd': -31897438098, 'start': 1451613600000, 'viewerCount': 2947, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i2/TB1eGZKKVXXXXXzXpXXGPdR8VXX', 'status': 'done', 'delayCount': 5, 'title': '建德市半岛国际1602、1603、1605、1606室房地产', 'initialPrice': 1200000.0, 'applyCount': 4, 'xmppVersion': '27', 'id': 525300827808, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525300827808.htm', 'consultPrice': 1666400.0, 'bidCount': 24, 'timeToStart': -31984935098, 'currentPrice': 1200000.0}, {'end': 1451701009000, 'timeToEnd': -31897526098, 'start': 1451613600000, 'viewerCount': 6515, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i1/TB1m2sEKVXXXXX_XXXXs.yQ.XXX', 'status': 'done', 'delayCount': 5, 'title': '莆田市荔城区学园路北街108号锦峰龙园公寓1907号的房地产', 'initialPrice': 965000.0, 'applyCount': 10, 'xmppVersion': '46', 'id': 525324772257, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525324772257.htm', 'consultPrice': 1112700.0, 'bidCount': 43, 'timeToStart': -31984935098, 'currentPrice': 965000.0}, {'end': 1451700890000, 'timeToEnd': -31897645098, 'start': 1451613600000, 'viewerCount': 4075, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i1/TB1FNKWLXXXXXbIXVXXTEQo.XXX', 'status': 'done', 'delayCount': 4, 'title': '连云港市海州区朝阳西路与江化路交叉口一宗工业国有出让建设用地', 'initialPrice': 2300000.0, 'applyCount': 3, 'xmppVersion': '19', 'id': 525258435673, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525258435673.htm', 'consultPrice': 1590000.0, 'bidCount': 12, 'timeToStart': -31984935098, 'currentPrice': 2300000.0}, {'end': 1451700829000, 'timeToEnd': -31897706098, 'start': 1451613600000, 'viewerCount': 8852, 'buyRestrictions': 1, 'picUrl': '//img.alicdn.com/bao/uploaded/i4/TB1ofDSKVXXXXX1aXXX97DR8pXX', 'status': 'done', 'delayCount': 4, 'title': '福州市仓山区上雁路56号金山碧水冬馨苑10#楼601复式单元', 'initialPrice': 1750000.0, 'applyCount': 14, 'xmppVersion': '42', 'id': 525267981469, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525267981469.htm', 'consultPrice': 1971200.0, 'bidCount': 39, 'timeToStart': -31984935098, 'currentPrice': 1750000.0}, {'end': 1451700801000, 'timeToEnd': -31897734098, 'start': 1451613600000, 'viewerCount': 6653, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i4/TB121QoKVXXXXXDXFXX6Q2N.XXX', 'status': 'done', 'delayCount': 4, 'title': '杭州市世纪新城26幢2单元402室房屋', 'initialPrice': 3430000.0, 'applyCount': 8, 'xmppVersion': '73', 'id': 525309625567, 'supportLoans': 1, 'itemUrl': '//sf.taobao.com/sf_item/525309625567.htm', 'consultPrice': 3331600.0, 'bidCount': 68, 'timeToStart': -31984935098, 'currentPrice': 3430000.0}, {'end': 1451700725000, 'timeToEnd': -31897810098, 'start': 1451613600000, 'viewerCount': 5585, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i3/TB10HY_KVXXXXXTXVXXh7fV.XXX', 'status': 'done', 'delayCount': 3, 'title': '杭州市下城区朝晖四小区54幢3单元702室房屋', 'initialPrice': 990000.0, 'applyCount': 3, 'xmppVersion': '11', 'id': 525307756717, 'supportLoans': 1, 'itemUrl': '//sf.taobao.com/sf_item/525307756717.htm', 'consultPrice': 1280000.0, 'bidCount': 7, 'timeToStart': -31984935098, 'currentPrice': 990000.0}, {'end': 1451700664000, 'timeToEnd': -31897871098, 'start': 1451613600000, 'viewerCount': 2402, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i1/TB1o.UpKVXXXXcSXXXXST...XXX', 'status': 'done', 'delayCount': 3, 'title': '绍兴市越城区君悦大厦2208室房产（含室内固定装饰装修）', 'initialPrice': 466880.0, 'applyCount': 3, 'xmppVersion': '16', 'id': 525293625282, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525293625282.htm', 'consultPrice': 553600.0, 'bidCount': 12, 'timeToStart': -31984935098, 'currentPrice': 466880.0}, {'end': 1451700296000, 'timeToEnd': -31898239098, 'start': 1451613600000, 'viewerCount': 4417, 'buyRestrictions': 0, 'picUrl': '//img.alicdn.com/bao/uploaded/i1/TB1HgwkKVXXXXalXVXXFkKd.XXX', 'status': 'done', 'delayCount': 1, 'title': '徐州市中新.泉山森林海（一期）-1、YF29-4-402房产', 'initialPrice': 371200.0, 'applyCount': 9, 'xmppVersion': '23', 'id': 525291531299, 'supportLoans': 0, 'itemUrl': '//sf.taobao.com/sf_item/525291531299.htm', 'consultPrice': 479000.0, 'bidCount': 17, 'timeToStart': -31984935098, 'currentPrice': 371200.0}]}
                 """
                 for item in links_json["data"]:
-                    print("https:"+item["itemUrl"])
+                    # print("https:"+item["itemUrl"])
                     links_per_page.append("https:"+item["itemUrl"])
         except (AttributeError, TypeError) as e:
             return None
@@ -259,39 +259,44 @@ class Crawler(object):
         # print(self.calendar_list)
         links_list = [] # 存储指定日期内所有的拍卖商品详细页面的链接
         # 首先获取每一天的拍卖商品列表的首页面URL
+        print("正在获取所有拍卖商品详细页面URL...")
         for link_per_day in self.calendar_list:
             # print(link_per_day)
             # 获取当天所有的拍卖商品详细页面的URL，并添加到link_list列表中
             links_list.extend(self.get_links_per_day(link_per_day))
-        # 将制定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中
+        # 将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中
+        print("将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中")
         self.store_links_to_file(links_list, "../data/links.csv")
 
         # 获取每一件拍卖商品详细页面的URL,并抽取页面中的拍卖商品的详细信息，添加到page_info_list列表中
+        print("正在获取所有指定日期内全部商品的详细信息...")
         page_info_list = [["标题", "结束时间", "拍卖状态", "成交价格", "报名人数", "提醒人数", "围观次数", "起拍价", "加价幅度", "保证金", "佣金", "延时周期", "保留价", "送拍机构", "特色服务"]]
         for link in links_list:
             page_info = self.get_page_info(link)
+            print("正在获取"+link+"页面信息...")
             # print(page_info)
             if page_info is not None:
                 page_info_list.append(page_info)
 
         # 将page_info_list拍卖商品详细信息存储到page_info.csv文件中
+        print("将page_info_list拍卖商品详细信息存储到page_info.csv文件中")
         self.store_page_info_to_csv(page_info_list, "../data/page_info.csv")
 
     def get_calendar_links(self, start_time_epoch, end_time_epoch):
         """获取指定时间段的拍卖商品列表的日历链接"""
         calendar_links_list = []
-        print("开始时间戳：", start_time_epoch)
-        print("结束时间戳：", end_time_epoch)
-
+        # print("开始时间戳：", start_time_epoch)
+        # print("结束时间戳：", end_time_epoch)
+        print("正在获取商品列表日历链接...")
         if start_time_epoch > end_time_epoch:
             print("您输入的时间区间有有误，请重新输入！")
             return None
 
-        while (start_time_epoch <= end_time_epoch):
+        while start_time_epoch <= end_time_epoch:
             current_time = start_time_epoch
             link = "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=" + str(
                 current_time) + "000"
-            print(link)
+            # print(link)
             calendar_links_list.append(link)
             start_time_epoch += 86400
         return calendar_links_list
@@ -300,18 +305,26 @@ class Crawler(object):
 if __name__ == "__main__":
     # 自动采集任意时间段内的功能已添加完毕
 
+    run_start = time.time()  # 运行开始
+    print("------------------开始采集---------------------------")
     # 开始采集的时间
     # 只需要填写年月日，如2016年1月1日->(2016,1,1,0,0,0)
     start_time = datetime.datetime(2016,1,1,0,0,0)
     # 结束采集的时间，要求同上
-    end_time = datetime.datetime(2016,1,3,0,0,0)
-
+    end_time = datetime.datetime(2016,2,1,0,0,0)
+    print("开始时间：", start_time)
+    print("结束时间：", end_time)
     # 将时间格式转换为Unix时间戳
     start_time_epoch = round(time.mktime(start_time.timetuple()))
     end_time_epoch = round(time.mktime(end_time.timetuple()))
     # 开始实例化爬虫类
     # 传入开始采集和结束采集时间区间
     my_crawler = Crawler(start_time_epoch, end_time_epoch)
+
+    run_end = time.time()  # 运行结束
+    print("------------------结束采集---------------------------")
+    print("time consuming:%d s" %(run_end-run_start))
+
 
     # print(my_crawler.get_page_info())
     # print(my_crawler.get_next_page("https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"))
