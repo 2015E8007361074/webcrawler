@@ -1,10 +1,13 @@
 # coding:utf-8
 """
 create on Jan 5,2017 By Wenyan Yu
+
 该程序是前面程序的重构代码，目的在于重构爬虫以爬取拍卖网上的拍卖商品详细信息：
+
 根据那个不规范的需求文档，本程序需要实现以下功能：
 1.保存商品详细页面的原始HTML代码
 2.抽取拍卖商品的详细信息保存为csv格式，具体需要抽取的信息如此下：
+
 1.标题
 2.结束时间
 3.拍卖状态（已成交/流拍） 注：对于撤回和终止的拍卖商品，由于没有相关信息，对采集到页面予以舍弃，不进行抽取
@@ -20,6 +23,7 @@ create on Jan 5,2017 By Wenyan Yu
 13.保留价（有或无）
 14.送拍机构（没找到默认为无）
 15.特色服务（没找到，默认为无）
+
 最后需要生成三个部分的信息：
 1.所有详细页面的链接，保存为links.csv文档，格式为url,标题
 2.所有采集到的拍买商品详细信息，保存为page_info.csv文档，格式为：
@@ -34,12 +38,29 @@ import json
 import os
 import datetime
 import time
+import _thread
 
 
 class Crawler(object):
     """爬虫类，用于爬去拍卖网站上的商品信息"""
     def __init__(self, start_time_epoch, end_time_epoch ):
 
+        self.links_list = []  # 存储指定日期内所有的拍卖商品详细页面的链接
+        self.page_info_list = [["标题",
+                           "结束时间",
+                           "拍卖状态",
+                           "成交价格",
+                           "报名人数",
+                           "提醒人数",
+                           "围观次数",
+                           "起拍价",
+                           "加价幅度",
+                           "保证金",
+                           "佣金",
+                           "延时周期",
+                           "保留价",
+                           "送拍机构",
+                           "特色服务"]]  # 存储所有采集到所有拍卖商品的详细信息
         self.start = start_time_epoch # 开始采集的时间
         self.end = end_time_epoch    # 结束采集的时间
         # 获取给定时间段拍卖商品的日历链接
@@ -47,13 +68,6 @@ class Crawler(object):
         # 将获取到拍卖商品日历链接存储到calendar_links.csv当中
         self.store_links_to_file(self.calendar_list, "../data/calendar_links.csv")
         self.run_crawler()
-        # self.url_for_per_day = "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000"
-        # 上面是2016年1月1日拍卖商品的列表页面
-        # self.url = "https://sf.taobao.com/sf_item/525351764416.htm?spm=a213w.7398552.paiList.1.YEOjaL" # 拍卖结束，流拍
-        # self.url = "https://sf.taobao.com/sf_item/541714260036.htm?spm=a213w.7398552.paiList.5.3YWi2H" # 拍卖结束，已成交
-        # self.url = "https://sf.taobao.com/sf_item/541629168048.htm?spm=a213w.7398552.paiList.1.3YWi2H" # 正在进行的拍卖
-        # self.url = "https://sf.taobao.com/sf_item/543245084757.htm?spm=a213w.7398552.paiList.4.BmB61J" # 被中止的拍卖
-        # self.url = "https://sf.taobao.com/sf_item/543239404828.htm?spm=a213w.7398552.paiList.12.BmB61J" # 被撤回的拍卖
 
     def get_page_info(self, url):
         """
@@ -190,12 +204,13 @@ class Crawler(object):
             return None
         return links_per_page
 
-    def get_links_per_day(self, day_url):
+    def get_links_per_day(self, day_url, lock):
         """
         获取某一天所有拍卖商品的详细页面链接
         :param day_url:
         :return: links_per_day
         """
+        print("开始新的线程,lock:", lock, "...")
         url = day_url
         links_per_day = []
         if self.get_links_per_page(url) is None:
@@ -203,7 +218,9 @@ class Crawler(object):
         while(self.get_next_page(url)):
             links_per_day.extend(self.get_links_per_page(url))
             url = self.get_next_page(url)
-        return links_per_day
+        self.links_list.extend(links_per_day) # 将获取的当天拍卖商品详细页面链接添加到links_list中
+        lock.release()
+        # return links_per_day
 
     def store_links_to_file(self, res_list, des_path):
         """
@@ -217,6 +234,7 @@ class Crawler(object):
         # print(res_list)
         """
         file_in = open(des_path, 'w+')
+
         try:
             # writer = csv.writer(csvFile)
             for i in res_list:
@@ -269,55 +287,54 @@ class Crawler(object):
         print("商品列表日历链接获取完成,共%d条记录, time consuming:%d s" % (len(calendar_links_list), (end - start)))
         return calendar_links_list
 
-    def run_crawler(self):
-        """根据需求开始爬取符合要求的数据，并将数据存储到csv文件中"""
-        # print(self.calendar_list)
-        links_list = [] # 存储指定日期内所有的拍卖商品详细页面的链接
-        # 首先获取每一天的拍卖商品列表的首页面URL
+    def multi_thread(self, calendar_list):
+        """
+        多线程获取所有拍卖商品详细页面的URL
+        警告!
+        为了方面，没有对并发线程做实际控制，以calendar_list的长度做并发线程数
+        :param calendar_list: 日历链接列表multithreaded/mtsleepB.py:20
+        :return: link_list　所有拍卖商品详细页面的URL
+        """
         print("正在获取所有拍卖商品详细页面URL...")
         start = time.time()
-        for link_per_day in self.calendar_list:
-            # print(link_per_day)
-            # 获取当天所有的拍卖商品详细页面的URL，并添加到link_list列表中
-            links_list.extend(self.get_links_per_day(link_per_day))
+        locks = []
+        loops = range(len(calendar_list))
+        # 创建锁列表
+        for i in loops:
+            lock = _thread.allocate_lock()
+            lock.acquire()
+            locks.append(lock)
+        for i in loops:
+            _thread.start_new_thread(self.get_links_per_day, (calendar_list[i], locks[i]))
+        for i in loops:
+            while locks[i].locked():pass
         end = time.time()
-        print("拍卖商品详细页面URL获取完成,共%d条记录, time consuming:%d s" % (len(links_list),(end - start)))
+        print("拍卖商品详细页面URL获取完成,共%d条记录, time consuming:%d s" % (len(self.links_list), (end - start)))
 
+    def run_crawler(self):
+        """根据需求开始爬取符合要求的数据，并将数据存储到csv文件中"""
+        # 多线程，首先获取每一天的拍卖商品列表的首页面URL
+        self.multi_thread(self.calendar_list)
         # 将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中
         print("将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中")
-        self.store_links_to_file(links_list, "../data/links.csv")
+        self.store_links_to_file(self.links_list, "../data/links.csv")
 
         # 获取每一件拍卖商品详细页面的URL,并抽取页面中的拍卖商品的详细信息，添加到page_info_list列表中
         print("正在获取所有指定日期内全部商品的详细信息...")
         start = time.time()
-        page_info_list = [["标题",
-                           "结束时间",
-                           "拍卖状态",
-                           "成交价格",
-                           "报名人数",
-                           "提醒人数",
-                           "围观次数",
-                           "起拍价",
-                           "加价幅度",
-                           "保证金",
-                           "佣金",
-                           "延时周期",
-                           "保留价",
-                           "送拍机构",
-                           "特色服务"]]
-        for link in links_list:
+        for link in self.links_list:
             page_info = self.get_page_info(link)
             print("正在获取"+link+"页面信息...")
             # print(page_info)
             if page_info is not None:
-                page_info_list.append(page_info)
+                self.page_info_list.append(page_info)
         end = time.time()
         print("指定日期内全部拍卖商品详细信息获取完成,共%d条记录, time consuming:%d s, 平均每个页面抽取时间为%f s"
-              % (len(page_info_list), (end - start), (end - start)/len(page_info_list)))
+              % (len(self.page_info_list), (end - start), (end - start)/len(self.page_info_list)))
 
         # 将page_info_list拍卖商品详细信息存储到page_info.csv文件中
         print("将page_info_list拍卖商品详细信息存储到page_info.csv文件中")
-        self.store_page_info_to_csv(page_info_list, "../data/page_info.csv")
+        self.store_page_info_to_csv(self.page_info_list, "../data/page_info.csv")
 
 if __name__ == "__main__":
     # 自动采集任意时间段内的功能已添加完毕
@@ -328,7 +345,7 @@ if __name__ == "__main__":
     # 只需要填写年月日，如2016年1月1日->(2016,1,1,0,0,0)
     start_time = datetime.datetime(2016,1,1,0,0,0)
     # 结束采集的时间，要求同上
-    end_time = datetime.datetime(2016,1,1,0,0,0)
+    end_time = datetime.datetime(2016,1,2,0,0,0)
     print("开始时间：", start_time)
     print("结束时间：", end_time)
     # 将时间格式转换为Unix时间戳
