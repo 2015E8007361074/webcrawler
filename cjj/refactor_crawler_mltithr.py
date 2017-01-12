@@ -314,6 +314,38 @@ class Crawler(object):
         end = time.time()
         print("拍卖商品详细页面URL获取完成,共%d条记录, time consuming:%d s" % (len(self.links_list), (end - start)))
 
+    def get_links_list_page_info(self, links, lock):
+        """抽取链接列表中每个链接详细页面的信息"""
+        print("开始新的线程, lock:", lock,"...")
+        thread_start = time.time()
+        for link in links:
+            page_info = self.get_page_info(link)
+            if page_info is not None:
+                self.page_info_list.append(page_info)
+        thread_end = time.time()
+        print("线程", lock, "运行结束，耗时：%s s" % (thread_end - thread_start))
+        lock.release()
+
+    def get_links_all_page_info(self, N):
+        """抽取links_list中所有拍卖商品详细页面的信息"""
+        m = len(self.links_list)//N + 1
+        locks = []
+        loops = range(N)
+        for i in loops:
+            lock = _thread.allocate_lock()
+            lock.acquire()
+            locks.append(lock)
+        for i in loops:
+            if (i+1)*m < len(self.links_list):
+                links_list_thread = self.links_list[i*m:((i+1)*m)]
+            else:
+                links_list_thread = self.links_list[i*m:(len(self.links_list))]
+            _thread.start_new_thread(self.get_links_list_page_info, (links_list_thread, locks[i]))
+
+        for i in loops:
+            while locks[i].locked():
+                pass
+
     def run_crawler(self):
         """根据需求开始爬取符合要求的数据，并将数据存储到csv文件中"""
         # 多线程，首先获取每一天的拍卖商品列表的首页面URL
@@ -321,16 +353,10 @@ class Crawler(object):
         # 将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中
         print("将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中")
         self.store_links_to_file(self.links_list, "../data/links.csv")
-
         # 获取每一件拍卖商品详细页面的URL,并抽取页面中的拍卖商品的详细信息，添加到page_info_list列表中
         print("正在获取所有指定日期内全部商品的详细信息...")
         start = time.time()
-        for link in self.links_list:
-            page_info = self.get_page_info(link)
-            print("正在获取"+link+"页面信息...")
-            # print(page_info)
-            if page_info is not None:
-                self.page_info_list.append(page_info)
+        self.get_links_all_page_info(100)
         end = time.time()
         print("指定日期内全部拍卖商品详细信息获取完成,共%d条记录, time consuming:%d s, 平均每个页面抽取时间为%f s"
               % (len(self.page_info_list), (end - start), (end - start)/len(self.page_info_list)))
@@ -392,10 +418,22 @@ if __name__ == "__main__":
 
 
 串行爬取2016.2.1到2016.2.5　五天的全部拍卖商品详细链接共需 821 s
-并行爬取2016.2.1到2016.2.5　五天的全部拍卖商品详细链接共需 191 s
+并行爬取2016.2.1到2016.2.5　五天的全部拍卖商品详细链接共需 191 s 或　209 s
 
 具体需要多久没时间，每次运行的时间可能有所不一样，这个与当时的网络状态有关系
 多测几次，求个平均值
 大致也能看的出，并行爬取对爬取的速度有所提升，但是却不是很显著
 因此需要分析程序的时间消耗到底在哪里,那些地方需要进一步改进
+
+抽取页面信息的是否采用10线程并发
+
+抽取2016.2.1到2016.2.5所有拍卖商品详细页面，串行需要1300多秒，平均每个页面抽取时间大概0.4秒
+
+抽取2016.2.1到2016.2.5期间所有拍卖商品详细页面信息
+10线程并发如下：
+指定日期内全部拍卖商品详细信息获取完成,共2922条记录, time consuming:298 s, 平均每个页面抽取时间为0.102085 s
+100线程并发如下：
+
+
+
 """
