@@ -2,46 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d1ae23a-676f-41f9-8168-eef1e62a2b8d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/about_Data/scrapy_csv_wiki.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/about_Data/write_csv.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/图片小爬虫/picture/9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/using_Data/download/admin/editor/plugins/code/prettify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/using_Data/download/content/plugins/Lanye_lytebox/images/lytebox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-776a1482816220.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-a92d1482245274.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-e3b21481635678.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-e49d1482816533.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-f7381481022499.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-f7701481276015.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/using_Data/download/content/uploadfile/201701/thum-901b1483624963.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/using_Data/getPageMedia.py" afterPath="$PROJECT_DIR$/about_Data/getPageMedia.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/using_Data/get_page_media.py" afterPath="$PROJECT_DIR$/about_Data/get_page_media.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/about_Data/webdav.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/about_Data/read_csv.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/about_Data/read_pdf.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/page_info.csv" afterPath="$PROJECT_DIR$/data/page_info.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/图片小爬虫/imgSpider.py" afterPath="$PROJECT_DIR$/test/图片小爬虫/imgSpider.py" />
     </list>
     <ignored path="webcrawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +23,10 @@
     <SUITE FILE_PATH="coverage/webcrawler$imgSpider.coverage" NAME="imgSpider Coverage Results" MODIFIED="1484116709838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test/图片小爬虫" />
     <SUITE FILE_PATH="coverage/webcrawler$refactor_crawler.coverage" NAME="refactor_crawler Coverage Results" MODIFIED="1484124155644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cjj" />
     <SUITE FILE_PATH="coverage/webcrawler$get_links.coverage" NAME="get_links Coverage Results" MODIFIED="1483957619060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mryu" />
+    <SUITE FILE_PATH="coverage/webcrawler$read_csv.coverage" NAME="read_csv Coverage Results" MODIFIED="1484186239170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/about_Data" />
     <SUITE FILE_PATH="coverage/webcrawler$getPageMedia.coverage" NAME="getPageMedia Coverage Results" MODIFIED="1484105367273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/using_Data" />
     <SUITE FILE_PATH="coverage/webcrawler$scrapy_csv_wiki.coverage" NAME="scrapy_csv_wiki Coverage Results" MODIFIED="1484119627709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/using_Data" />
+    <SUITE FILE_PATH="coverage/webcrawler$read_pdf.coverage" NAME="read_pdf Coverage Results" MODIFIED="1484187240071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/about_Data" />
     <SUITE FILE_PATH="coverage/webcrawler$crawler_wiki.coverage" NAME="crawler_wiki Coverage Results" MODIFIED="1484119915516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/using_API" />
     <SUITE FILE_PATH="coverage/webcrawler$get_page_media.coverage" NAME="get_page_media Coverage Results" MODIFIED="1484117450992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/using_Data" />
     <SUITE FILE_PATH="coverage/webcrawler$test_date.coverage" NAME="test_date Coverage Results" MODIFIED="1483707549662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cjj" />
@@ -86,31 +52,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="refactor_crawler.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
+      <file leaf-file-name="read_csv.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/about_Data/read_csv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1764">
-              <caret line="153" column="12" selection-start-line="153" selection-start-column="12" selection-end-line="153" selection-end-column="12" />
-              <folding />
+            <state relative-caret-position="120">
+              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+              <folding>
+                <element signature="e#15#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="links.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/links.csv">
+      <file leaf-file-name="read_pdf.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/about_Data/read_pdf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="330" column="0" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="270">
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+              <folding>
+                <element signature="e#15#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page_info.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/page_info.csv">
+      <file leaf-file-name="write_csv.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/about_Data/write_csv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="38" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -157,6 +127,8 @@
         <option value="$PROJECT_DIR$/using_Data/scrapy_csv_wiki.py" />
         <option value="$PROJECT_DIR$/using_Data/files/editors.csv" />
         <option value="$PROJECT_DIR$/data/page_info.csv" />
+        <option value="$PROJECT_DIR$/about_Data/read_csv.py" />
+        <option value="$PROJECT_DIR$/about_Data/read_pdf.py" />
       </list>
     </option>
   </component>
@@ -197,6 +169,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -231,53 +204,21 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Python.refactor_crawler">
-    <configuration default="false" name="get_page_media" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/using_Data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="webcrawler" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/using_Data/get_page_media.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="write_csv" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/using_Data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="webcrawler" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/using_Data/write_csv.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/about_Data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.read_pdf">
     <configuration default="false" name="scrapy_csv_wiki" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -328,6 +269,42 @@
       <module name="webcrawler" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cjj/refactor_crawler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="read_csv" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/about_Data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="webcrawler" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/about_Data/read_csv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="read_pdf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/about_Data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="webcrawler" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/about_Data/read_pdf.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -552,19 +529,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.get_page_media" />
-      <item index="1" class="java.lang.String" itemvalue="Python.write_csv" />
-      <item index="2" class="java.lang.String" itemvalue="Python.scrapy_csv_wiki" />
-      <item index="3" class="java.lang.String" itemvalue="Python.crawler_wiki" />
-      <item index="4" class="java.lang.String" itemvalue="Python.refactor_crawler" />
+      <item index="0" class="java.lang.String" itemvalue="Python.scrapy_csv_wiki" />
+      <item index="1" class="java.lang.String" itemvalue="Python.crawler_wiki" />
+      <item index="2" class="java.lang.String" itemvalue="Python.refactor_crawler" />
+      <item index="3" class="java.lang.String" itemvalue="Python.read_csv" />
+      <item index="4" class="java.lang.String" itemvalue="Python.read_pdf" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.refactor_crawler" />
-        <item index="1" class="java.lang.String" itemvalue="Python.crawler_wiki" />
-        <item index="2" class="java.lang.String" itemvalue="Python.scrapy_csv_wiki" />
-        <item index="3" class="java.lang.String" itemvalue="Python.write_csv" />
-        <item index="4" class="java.lang.String" itemvalue="Python.get_page_media" />
+        <item index="0" class="java.lang.String" itemvalue="Python.read_pdf" />
+        <item index="1" class="java.lang.String" itemvalue="Python.read_csv" />
+        <item index="2" class="java.lang.String" itemvalue="Python.refactor_crawler" />
+        <item index="3" class="java.lang.String" itemvalue="Python.crawler_wiki" />
+        <item index="4" class="java.lang.String" itemvalue="Python.scrapy_csv_wiki" />
       </list>
     </recent_temporary>
   </component>
@@ -597,13 +574,13 @@
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14486921" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1321261" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293092" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3200514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31876606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -658,20 +635,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data/page_info.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61740">
-          <caret line="4116" column="0" selection-start-line="4116" selection-start-column="0" selection-end-line="4116" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cjj/get_calendar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -802,13 +765,13 @@
           <second_editor />
         </state>
       </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-205">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
@@ -840,61 +803,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/operating_Data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/using_Data/download/logo.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/operating_Data.py" />
+    <entry file="file://$PROJECT_DIR$/using_Data/download/logo.jpg" />
     <entry file="file://$PROJECT_DIR$/about_Data/getPageMedia.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="29" />
-          <folding>
-            <element signature="e#15#49#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-f7701481276015.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-f7381481022499.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-e3b21481635678.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-a92d1482245274.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-776a1482816220.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-f7701481276015.png" />
+    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-f7381481022499.png" />
+    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-e3b21481635678.jpg" />
+    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-a92d1482245274.png" />
+    <entry file="file://$PROJECT_DIR$/using_Data/download/content/uploadfile/201612/thum-776a1482816220.png" />
     <entry file="file://$PROJECT_DIR$/using_API/decode_json.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding>
-            <element signature="e#15#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,33 +828,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
-          <folding>
-            <element signature="e#616#663#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/using_Data/test.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/using_Data/test.csv" />
     <entry file="file://$PROJECT_DIR$/about_Data/files/editors.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about_Data/write_csv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,9 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding>
-            <element signature="e#16#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -946,9 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-          <folding>
-            <element signature="e#102#136#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -956,9 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="24" column="91" selection-start-line="24" selection-start-column="91" selection-end-line="24" selection-end-column="91" />
-          <folding>
-            <element signature="e#15#49#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -966,31 +864,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15075">
           <caret line="1005" column="5" selection-start-line="1005" selection-start-column="5" selection-end-line="1005" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/page_info.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/links.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
+        <state relative-caret-position="462">
           <caret line="330" column="0" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/page_info.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
+        <state relative-caret-position="809">
           <caret line="153" column="12" selection-start-line="153" selection-start-column="12" selection-end-line="153" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about_Data/write_csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about_Data/read_csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding>
+            <element signature="e#15#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about_Data/read_pdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#15#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
