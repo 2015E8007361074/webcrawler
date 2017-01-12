@@ -252,41 +252,12 @@ class Crawler(object):
         finally:
             csvFile.close()
 
-    def run_crawler(self):
-        """根据需求开始爬取符合要求的数据，并将数据存储到csv文件中"""
-
-
-        # print(self.calendar_list)
-        links_list = [] # 存储指定日期内所有的拍卖商品详细页面的链接
-        # 首先获取每一天的拍卖商品列表的首页面URL
-        print("正在获取所有拍卖商品详细页面URL...")
-        for link_per_day in self.calendar_list:
-            # print(link_per_day)
-            # 获取当天所有的拍卖商品详细页面的URL，并添加到link_list列表中
-            links_list.extend(self.get_links_per_day(link_per_day))
-        # 将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中
-        print("将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中")
-        self.store_links_to_file(links_list, "../data/links.csv")
-
-        # 获取每一件拍卖商品详细页面的URL,并抽取页面中的拍卖商品的详细信息，添加到page_info_list列表中
-        print("正在获取所有指定日期内全部商品的详细信息...")
-        page_info_list = [["标题", "结束时间", "拍卖状态", "成交价格", "报名人数", "提醒人数", "围观次数", "起拍价", "加价幅度", "保证金", "佣金", "延时周期", "保留价", "送拍机构", "特色服务"]]
-        for link in links_list:
-            page_info = self.get_page_info(link)
-            print("正在获取"+link+"页面信息...")
-            # print(page_info)
-            if page_info is not None:
-                page_info_list.append(page_info)
-
-        # 将page_info_list拍卖商品详细信息存储到page_info.csv文件中
-        print("将page_info_list拍卖商品详细信息存储到page_info.csv文件中")
-        self.store_page_info_to_csv(page_info_list, "../data/page_info.csv")
-
     def get_calendar_links(self, start_time_epoch, end_time_epoch):
         """获取指定时间段的拍卖商品列表的日历链接"""
         calendar_links_list = []
         # print("开始时间戳：", start_time_epoch)
         # print("结束时间戳：", end_time_epoch)
+        start = time.time()  # 运行开始
         print("正在获取商品列表日历链接...")
         if start_time_epoch > end_time_epoch:
             print("您输入的时间区间有有误，请重新输入！")
@@ -299,8 +270,59 @@ class Crawler(object):
             # print(link)
             calendar_links_list.append(link)
             start_time_epoch += 86400
+        end = time.time()  # 运行结束
+        print("商品列表日历链接获取完成,共%d条记录, time consuming:%d s" % (len(calendar_links_list), (end - start)))
         return calendar_links_list
 
+    def run_crawler(self):
+        """根据需求开始爬取符合要求的数据，并将数据存储到csv文件中"""
+        # print(self.calendar_list)
+        links_list = [] # 存储指定日期内所有的拍卖商品详细页面的链接
+        # 首先获取每一天的拍卖商品列表的首页面URL
+        print("正在获取所有拍卖商品详细页面URL...")
+        start = time.time()
+        for link_per_day in self.calendar_list:
+            # print(link_per_day)
+            # 获取当天所有的拍卖商品详细页面的URL，并添加到link_list列表中
+            links_list.extend(self.get_links_per_day(link_per_day))
+        end = time.time()
+        print("拍卖商品详细页面URL获取完成,共%d条记录, time consuming:%d s" % (len(links_list),(end - start)))
+
+        # 将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中
+        print("将指定日期内的所有拍卖商品的信息页面的链接存储到links.csv文件中")
+        self.store_links_to_file(links_list, "../data/links.csv")
+
+        # 获取每一件拍卖商品详细页面的URL,并抽取页面中的拍卖商品的详细信息，添加到page_info_list列表中
+        print("正在获取所有指定日期内全部商品的详细信息...")
+        start = time.time()
+        page_info_list = [["标题",
+                           "结束时间",
+                           "拍卖状态",
+                           "成交价格",
+                           "报名人数",
+                           "提醒人数",
+                           "围观次数",
+                           "起拍价",
+                           "加价幅度",
+                           "保证金",
+                           "佣金",
+                           "延时周期",
+                           "保留价",
+                           "送拍机构",
+                           "特色服务"]]
+        for link in links_list:
+            page_info = self.get_page_info(link)
+            print("正在获取"+link+"页面信息...")
+            # print(page_info)
+            if page_info is not None:
+                page_info_list.append(page_info)
+        end = time.time()
+        print("指定日期内全部拍卖商品详细信息获取完成,共%d条记录, time consuming:%d s, 平均每个页面抽取时间为%f s"
+              % (len(page_info_list), (end - start), (end - start)/len(page_info_list)))
+
+        # 将page_info_list拍卖商品详细信息存储到page_info.csv文件中
+        print("将page_info_list拍卖商品详细信息存储到page_info.csv文件中")
+        self.store_page_info_to_csv(page_info_list, "../data/page_info.csv")
 
 if __name__ == "__main__":
     # 自动采集任意时间段内的功能已添加完毕
@@ -311,7 +333,7 @@ if __name__ == "__main__":
     # 只需要填写年月日，如2016年1月1日->(2016,1,1,0,0,0)
     start_time = datetime.datetime(2016,1,1,0,0,0)
     # 结束采集的时间，要求同上
-    end_time = datetime.datetime(2016,1,2,0,0,0)
+    end_time = datetime.datetime(2016,1,3,0,0,0)
     print("开始时间：", start_time)
     print("结束时间：", end_time)
     # 将时间格式转换为Unix时间戳
