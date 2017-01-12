@@ -211,6 +211,7 @@ class Crawler(object):
         :return: links_per_day
         """
         print("开始新的线程,lock:", lock, "...")
+        thread_start = time.time()
         url = day_url
         links_per_day = []
         if self.get_links_per_page(url) is None:
@@ -219,6 +220,8 @@ class Crawler(object):
             links_per_day.extend(self.get_links_per_page(url))
             url = self.get_next_page(url)
         self.links_list.extend(links_per_day) # 将获取的当天拍卖商品详细页面链接添加到links_list中
+        thread_end = time.time()
+        print("线程",lock,"运行结束，耗时：%s s" %(thread_end - thread_start))
         lock.release()
         # return links_per_day
 
@@ -343,9 +346,9 @@ if __name__ == "__main__":
     print("------------------开始采集---------------------------")
     # 开始采集的时间
     # 只需要填写年月日，如2016年1月1日->(2016,1,1,0,0,0)
-    start_time = datetime.datetime(2016,1,1,0,0,0)
+    start_time = datetime.datetime(2016,2,1,0,0,0)
     # 结束采集的时间，要求同上
-    end_time = datetime.datetime(2016,1,2,0,0,0)
+    end_time = datetime.datetime(2016,2,5,0,0,0)
     print("开始时间：", start_time)
     print("结束时间：", end_time)
     # 将时间格式转换为Unix时间戳
@@ -376,3 +379,23 @@ if __name__ == "__main__":
         "https://sf.taobao.com/calendar.htm?category=0&city=&tradeType=-1&province=&selectDate=1451577600000",
             "../data/page_info_per_day.csv")
     """
+
+"""
+关于并行爬虫的一些思考，考虑到在爬取数据是绝大部分的时间损耗都在网络延迟上
+利用多线程爬取信息对速度的提升并不是很显著
+因此还需要进一步研究
+今天的研究就到这里吧
+
+经测试：
+串行爬取2016.1.8,2016.1.9,2016.1.10三天的全部拍卖商品详细链接共需284 s 或 134 s
+并行爬取2016.1.8,2016.1.9,2016.1.10三天的全部拍卖商品详细链接共需144 s 或 89 s
+
+
+串行爬取2016.2.1到2016.2.5　五天的全部拍卖商品详细链接共需 821 s
+并行爬取2016.2.1到2016.2.5　五天的全部拍卖商品详细链接共需 191 s
+
+具体需要多久没时间，每次运行的时间可能有所不一样，这个与当时的网络状态有关系
+多测几次，求个平均值
+大致也能看的出，并行爬取对爬取的速度有所提升，但是却不是很显著
+因此需要分析程序的时间消耗到底在哪里,那些地方需要进一步改进
+"""

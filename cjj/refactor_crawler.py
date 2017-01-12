@@ -326,9 +326,9 @@ if __name__ == "__main__":
     print("------------------开始采集---------------------------")
     # 开始采集的时间
     # 只需要填写年月日，如2016年1月1日->(2016,1,1,0,0,0)
-    start_time = datetime.datetime(2016,1,1,0,0,0)
+    start_time = datetime.datetime(2016,2,1,0,0,0)
     # 结束采集的时间，要求同上
-    end_time = datetime.datetime(2016,1,1,0,0,0)
+    end_time = datetime.datetime(2016,2,5,0,0,0)
     print("开始时间：", start_time)
     print("结束时间：", end_time)
     # 将时间格式转换为Unix时间戳
