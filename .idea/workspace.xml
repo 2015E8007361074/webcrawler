@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d1ae23a-676f-41f9-8168-eef1e62a2b8d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/about_Data/send_mail.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nlp/2-gram.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cjj/refactor_crawler_mltithr.py" afterPath="$PROJECT_DIR$/cjj/refactor_crawler_mltithr.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/calendar_links.csv" afterPath="$PROJECT_DIR$/data/calendar_links.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/links.csv" afterPath="$PROJECT_DIR$/data/links.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/page_info.csv" afterPath="$PROJECT_DIR$/data/page_info.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about_Data/files/editors.csv" afterPath="$PROJECT_DIR$/about_Data/files/editors.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nlp/2-gram.py" afterPath="$PROJECT_DIR$/nlp/2-gram.py" />
     </list>
     <ignored path="webcrawler.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,7 +38,7 @@
     <SUITE FILE_PATH="coverage/webcrawler$write_csv.coverage" NAME="write_csv Coverage Results" MODIFIED="1484118869305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/using_Data" />
     <SUITE FILE_PATH="coverage/webcrawler$get_calendar.coverage" NAME="get_calendar Coverage Results" MODIFIED="1483699330723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cjj" />
     <SUITE FILE_PATH="coverage/webcrawler$onethr.coverage" NAME="onethr Coverage Results" MODIFIED="1484202675253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/multithreaded" />
-    <SUITE FILE_PATH="coverage/webcrawler$2_gram.coverage" NAME="2-gram Coverage Results" MODIFIED="1487212766486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nlp" />
+    <SUITE FILE_PATH="coverage/webcrawler$2_gram.coverage" NAME="2-gram Coverage Results" MODIFIED="1487215096635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/nlp" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -65,8 +60,8 @@
       <file leaf-file-name="2-gram.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nlp/2-gram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+            <state relative-caret-position="-55">
+              <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
               <folding>
                 <element signature="e#60#94#0" expanded="true" />
               </folding>
@@ -74,11 +69,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="refactor_crawler_mltithr.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler_mltithr.py">
+      <file leaf-file-name="editors.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/about_Data/files/editors.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3027">
-              <caret line="383" column="14" selection-start-line="383" selection-start-column="14" selection-end-line="383" selection-end-column="14" />
+            <state relative-caret-position="180">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auto_git.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auto_git.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -111,7 +116,6 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/cjj/crawler_for_treatures.py" />
         <option value="$PROJECT_DIR$/mryu/get_links.py" />
-        <option value="$PROJECT_DIR$/auto_git.sh" />
         <option value="$PROJECT_DIR$/mryu/crawler_for_www.py" />
         <option value="$PROJECT_DIR$/using_API/decode_json.py" />
         <option value="$PROJECT_DIR$/using_API/crawler_wiki.py" />
@@ -133,7 +137,9 @@
         <option value="$PROJECT_DIR$/cjj/refactor_crawler.py" />
         <option value="$PROJECT_DIR$/cjj/refactor_crawler_mltithr.py" />
         <option value="$PROJECT_DIR$/about_Data/send_mail.py" />
+        <option value="$PROJECT_DIR$/auto_git.sh" />
         <option value="$PROJECT_DIR$/nlp/2-gram.py" />
+        <option value="$PROJECT_DIR$/about_Data/files/editors.csv" />
       </list>
     </option>
   </component>
@@ -144,8 +150,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="483" />
-    <option name="y" value="128" />
+    <option name="x" value="476" />
+    <option name="y" value="53" />
     <option name="width" value="1375" />
     <option name="height" value="876" />
   </component>
@@ -202,6 +208,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="wikimedia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="nlp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -217,6 +237,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cjj" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="about_Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcrawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="about_Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -253,24 +305,6 @@
       <module name="webcrawler" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cjj/refactor_crawler_mltithr.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="refactor_crawler (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cjj" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="webcrawler" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cjj/refactor_crawler.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -327,6 +361,17 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nlp/2-gram.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="auto_git.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="bash" />
+      <option name="INTERPRETER_PATH" value="/usr/bin/env" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/auto_git.sh" />
+      <option name="PARAMETERS" value="" />
+      <module name="webcrawler" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
@@ -550,18 +595,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.refactor_crawler" />
-      <item index="1" class="java.lang.String" itemvalue="Python.refactor_crawler (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.send_mail" />
-      <item index="3" class="java.lang.String" itemvalue="Python.lambda_re" />
-      <item index="4" class="java.lang.String" itemvalue="Python.2-gram" />
+      <item index="1" class="java.lang.String" itemvalue="Python.send_mail" />
+      <item index="2" class="java.lang.String" itemvalue="Python.lambda_re" />
+      <item index="3" class="java.lang.String" itemvalue="Python.2-gram" />
+      <item index="4" class="java.lang.String" itemvalue="Bash.auto_git.sh" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.2-gram" />
-        <item index="1" class="java.lang.String" itemvalue="Python.lambda_re" />
-        <item index="2" class="java.lang.String" itemvalue="Python.send_mail" />
-        <item index="3" class="java.lang.String" itemvalue="Python.refactor_crawler" />
-        <item index="4" class="java.lang.String" itemvalue="Python.refactor_crawler (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Bash.auto_git.sh" />
+        <item index="2" class="java.lang.String" itemvalue="Python.lambda_re" />
+        <item index="3" class="java.lang.String" itemvalue="Python.send_mail" />
+        <item index="4" class="java.lang.String" itemvalue="Python.refactor_crawler" />
       </list>
     </recent_temporary>
   </component>
@@ -591,7 +636,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="483" y="128" width="1375" height="876" extended-state="0" />
+    <frame x="476" y="53" width="1375" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.162284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -600,7 +645,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293092" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31876606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31876606" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -728,13 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auto_git.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mryu/ext_link_mryu.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-33">
@@ -771,13 +809,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/using_Data/test.csv" />
-    <entry file="file://$PROJECT_DIR$/about_Data/files/editors.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about_Data/scrapy_csv_wiki.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -945,16 +976,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cjj/refactor_crawler_mltithr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3027">
+        <state relative-caret-position="3342">
           <caret line="383" column="14" selection-start-line="383" selection-start-column="14" selection-end-line="383" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_git.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about_Data/files/editors.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nlp/2-gram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+        <state relative-caret-position="-55">
+          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
           <folding>
             <element signature="e#60#94#0" expanded="true" />
           </folding>
