@@ -11,12 +11,13 @@ def get_title(url):
         return None
     try:
         bsObj= BeautifulSoup(html.read())
+        print(bsObj)
         title=bsObj.body.h1
     except AttributeError as e:
         return None
     return title
 
-title = get_title("http://www.pythonscraping.com/exercises/exercise1.html")
+title = get_title("https://item-paimai.taobao.com/pmp_item/545246887011.htm")
 
 if title == None:
     print("Title could not be found")
