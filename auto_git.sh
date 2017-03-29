@@ -2,5 +2,5 @@
 # !/bin/bash
 
 git add .
-git commit -m "自然语言处理进行中..."
+git commit -m "天眼查小爬虫"
 git push origin master

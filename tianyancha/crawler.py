@@ -63,7 +63,7 @@ class Crawler(object):
                     executable_path='/Users/wayne/Documents/Code/webcrawler/tianyancha/phantomjs',
                                                                 service_args=['--load-images=no'])
                 driver.get(page_url)
-                time.sleep(3)  # 延时等待页面加载
+                time.sleep(5)  # 延时等待页面加载
                 page_source = driver.page_source
                 bsObj = BeautifulSoup(page_source,"html.parser")
                 tr_list = bsObj.find("table",{"class":"table companyInfo-table"}).find("tbody").findAll("tr")
@@ -79,7 +79,6 @@ class Crawler(object):
             finally:
                 driver.close()
             return shareholer_info_list
-
 
 if __name__ == "__main__":
     # company_name = "深圳市腾讯计算机系统有限公司"
