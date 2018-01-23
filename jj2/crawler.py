@@ -21,6 +21,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 import json
+import csv
 
 page_url = "https://item-paimai.taobao.com/pmp_item/538916398974.htm?s=pmp_detail"
 
@@ -44,7 +45,9 @@ html = urlopen(api_url)
 hjson = json.loads(html.read())
 print(hjson)
 print("第1页")
+raw_data_list = []
 for item in hjson['list']:
+    temp_list = []
     bidder = item['bidBasic']['bidderNo']
     bid_price = item['bidBasic']['bidPrice']
     bid_price = bid_price//100
@@ -54,6 +57,12 @@ for item in hjson['list']:
     # 将基秒转化成时间
     bid_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(float(bid_time//1000)))
     print(bidder, ',', bid_price, ',', bid_time, ',', bid_type, ',', item_id)
+    temp_list.append(bidder)
+    temp_list.append(bid_price)
+    temp_list.append(bid_time)
+    temp_list.append(bid_type)
+    temp_list.append(item_id)
+    raw_data_list.append(temp_list)
 
 total_page = hjson["paging"]["totalPage"]
 # print("total_page:", total_page)
@@ -67,6 +76,7 @@ if total_page > 1:
         hjson = json.loads(html.read())
         # print(hjson)
         for item in hjson['list']:
+            temp_list = []
             bidder = item['bidBasic']['bidderNo']
             bid_price = item['bidBasic']['bidPrice']
             bid_price = bid_price // 100
@@ -76,6 +86,25 @@ if total_page > 1:
             # 将基秒转化成时间
             bid_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(float(bid_time // 1000)))
             print(bidder, ',', bid_price, ',', bid_time, ',', bid_type, ',', item_id)
+            temp_list.append(bidder)
+            temp_list.append(bid_price)
+            temp_list.append(bid_time)
+            temp_list.append(bid_type)
+            temp_list.append(item_id)
+            raw_data_list.append(temp_list)
+
+
+# 把数据写到csv文件中
+
+csvFile = open("./raw_data.csv", 'w+')
+# print(raw_data_list)
+try:
+    writer = csv.writer(csvFile)
+    writer.writerow(('bidder', 'bid_price', 'bid_time', 'bid_type', 'item_id'))
+    for item in raw_data_list:
+        writer.writerow(item)
+finally:
+    csvFile.close()
 
 # tr_list = bsObj.find("table", {"class": "pm-record-list"}).find("tbody").findAll("tr")
 # for tr_item in tr_list:
